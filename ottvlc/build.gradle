@@ -1,1 +1,6 @@
 apply plugin: 'java'
+
+dependencies{
+    compile files('dist/jna.jar')
+    compile files('dist/jna-platform.jar')
+}
