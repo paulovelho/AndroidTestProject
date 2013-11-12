@@ -18,25 +18,9 @@
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module-library" exported="" scope="PROVIDED">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/dist/jna.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/dist/jna-platform.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" exported="" name="jna-platform" level="project" />
+    <orderEntry type="library" exported="" name="jna" level="project" />
   </component>
 </module>
 

@@ -11,12 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import ottvlc.Ottvlc;
+
 public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Ottvlc ottPlayer = new Ottvlc();
+        String multicastUrl = "rtp://224.7.7.79";
+        String multicastPort = "5004";
+        ottPlayer.Play(multicastUrl, multicastPort);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
