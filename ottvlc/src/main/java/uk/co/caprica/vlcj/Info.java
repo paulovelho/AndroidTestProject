@@ -67,10 +67,12 @@ public final class Info {
             // This can only happen if something went wrong with the build
             version = null;
         }
+        /*
         Logger.info("vlcj: {}", version != null ? version : "<version not available>");
         Logger.info("java: {} {}", System.getProperty("java.version"), System.getProperty("java.vendor"));
         Logger.info("java home: {}", System.getProperty("java.home"));
         Logger.info("os: {} {} {}", System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"));
+        */
     }
 
     /**

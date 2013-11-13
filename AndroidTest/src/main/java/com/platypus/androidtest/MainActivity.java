@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 import ottvlc.Ottvlc;
+import uk.co.caprica.vlcj.binding.LibVlc;
 
 public class MainActivity extends ActionBarActivity {
 

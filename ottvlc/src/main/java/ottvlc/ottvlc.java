@@ -4,6 +4,7 @@ import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.direct.DirectMediaPlayer;
 import uk.co.caprica.vlcj.player.direct.RenderCallback;
+import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.player.headless.HeadlessMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
@@ -25,28 +26,15 @@ public class Ottvlc {
 
     public void Play(String multicastUrl, String multicastPort){
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        EmbeddedMediaPlayer mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
 
-        String loadUrl = multicastUrl + multicastPort;
-
-        DirectMediaPlayer mediaPlayer = mediaPlayerFactory.newDirectMediaPlayer(
-                320, 240,
-                new RenderCallback() {
-                    @Override
-                    public void display(Memory arg0) {
-                        // Do nothing.
-                    }
-                });
+        String mrl = multicastUrl + ":" + multicastPort;
 
         // Options setup.
         String[] options = new String[]{};
-        String mrl = "v4l2:///dev/video0"; // Linux
 
         // Start processing.
         mediaPlayer.startMedia(mrl, options);
-
-        BufferedImage bufImg;
-        for (int i = 0; i < 1000; ++i) {
-            bufImg = mediaPlayer.getSnapshot();
 
     }
 
