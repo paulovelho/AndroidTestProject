@@ -1,7 +1,6 @@
 package com.platypus.androidtest;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,22 +8,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
-import ottvlc.Ottvlc;
-import uk.co.caprica.vlcj.binding.LibVlc;
+import uk.co.caprica.vlcj.player.MediaPlayerFactory;
+import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
+
+//import ottvlc.Ottvlc;
 
 public class MainActivity extends ActionBarActivity {
 
+    private String mrl = "rtp://224.7.7.79:5004";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Ottvlc ottPlayer = new Ottvlc();
-        String multicastUrl = "rtp://224.7.7.79";
-        String multicastPort = "5004";
-        ottPlayer.Play(multicastUrl, multicastPort);
+
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        EmbeddedMediaPlayer mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+
+
+        // Options setup.
+        String[] options = new String[]{};
+
+        // Start processing.
+        mediaPlayer.startMedia(mrl, options);
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

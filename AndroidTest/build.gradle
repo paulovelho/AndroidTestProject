@@ -26,5 +26,7 @@ dependencies {
 	compile 'com.android.support:appcompat-v7:18.0.0'
 	compile 'com.android.support:gridlayout-v7:18.0.0'
 	compile 'com.android.support:support-v4:18.0.0'
-    compile project (':ottvlc')
+    compile files('lib/vlcj-2.0.0.jar')
+    compile files('lib/jna.jar')
+    compile files('lib/jna-platform.jar')
 }
